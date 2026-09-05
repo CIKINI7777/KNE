@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Install Aplikasi Absensi KNE</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); color: #fff; min-height: 100vh; padding: 20px; text-align: center; }
+        .container { max-width: 500px; margin: 0 auto; background: rgba(255,255,255,0.05); border-radius: 20px; padding: 30px; border: 2px solid #FFD700; }
+        .logo { width: 120px; height: 120px; border-radius: 50%; border: 3px solid #FFD700; margin-bottom: 20px; }
+        h1 { color: #FFD700; margin-bottom: 10px; }
+        .step { background: rgba(0,102,204,0.2); border: 2px solid #0066CC; border-radius: 10px; padding: 15px; margin: 15px 0; text-align: left; }
+        .step-number { background: #0066CC; color: #fff; width: 30px; height: 30px; border-radius: 50%; display: inline-block; text-align: center; line-height: 30px; margin-right: 10px; font-weight: bold; }
+        .btn { background: linear-gradient(135deg, #DC143C 0%, #FF6B00 100%); color: #fff; padding: 15px 30px; border: none; border-radius: 10px; font-size: 18px; font-weight: bold; cursor: pointer; margin-top: 20px; text-decoration: none; display: inline-block; }
+        .success { background: rgba(0,255,0,0.2); border: 2px solid #0f0; color: #0f0; padding: 15px; border-radius: 10px; margin-top: 20px; display: none; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="logo.svg" alt="Logo KNE" class="logo">
+        <h1>INSTALL APLIKASI ABSENSI KNE</h1>
+        <p style="margin-bottom: 20px;">Ikuti langkah berikut untuk install aplikasi di HP Anda:</p>
+        
+        <div class="step">
+            <span class="step-number">1</span>
+            <strong>Klik tombol "BUKA APLIKASI" di bawah</strong>
+        </div>
+        
+        <div class="step">
+            <span class="step-number">2</span>
+            <strong>Klik titik tiga (⋮) di pojok kanan atas Chrome</strong>
+        </div>
+        
+        <div class="step">
+            <span class="step-number">3</span>
+            <strong>Pilih "Tambahkan ke layar utama"</strong>
+        </div>
+        
+        <div class="step">
+            <span class="step-number">4</span>
+            <strong>Klik "Tambahkan" atau "Install"</strong>
+        </div>
+        
+        <div class="step">
+            <span class="step-number">5</span>
+            <strong>✅ Selesai! Ikon KNEGO muncul di layar HP Anda</strong>
+        </div>
+        
+        <a href="index.html" class="btn">🚀 BUKA APLIKASI</a>
+        
+        <div class="success" id="successMsg">
+            ✅ Aplikasi berhasil di-install! Silakan buka dari layar utama HP Anda.
+        </div>
+    </div>
+    
+    <script>
+        // Deteksi apakah sudah di-install
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+        });
+        
+        window.addEventListener('appinstalled', () => {
+            document.getElementById('successMsg').style.display = 'block';
+        });
+    </script>
+</body>
+</html>
